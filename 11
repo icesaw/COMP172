@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AnimatedApp
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+            if(!e.Button.HasFlag(MouseButtons.None)) {
+                label1.Text = "Mouse Clicked";
+
+            }
+            else
+            {
+                label1.Text = "Mouse Over";
+            }
+        }
+
+        private void PictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = "Mouse Left";
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+            pictureBox1.Visible = false;
+            label1.Text = "Mouse Clicked";
+        }
+    }
+}
